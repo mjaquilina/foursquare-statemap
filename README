@@ -1,0 +1,19 @@
+
+foursquare-statemap
+
+Generates dynamic JavaScript vector maps of your Foursquare checkin history
+using the jQuery Vector Map plugin (http://jvectormap.owl-hollow.net/).
+
+Usage:
+
+# perl generate_map.pl --debug --key=ABCD1234 --cache_file=/var/tmp/geo.cache --ics_file=/var/tmp/4sq.ics
+
+--debug       Displays useful warnings for debugging
+--key         You can get this at https://foursquare.com/feeds/
+              It's the portion of the feed URL following '/history/', but preceding the '.rss/kml/ics' extension.
+              Ignored if --ics_file is passed.
+--cache_file  The script uses the OpenStreetMap API to retrieve states from lat/long positions. A cache file can
+              be used to save time and resources.
+--ics_file    Path to a local .ics file containing the checkin history. If this parameter is passed (and the file
+              exists), the script will not request the checkin history from Foursquare.
+
